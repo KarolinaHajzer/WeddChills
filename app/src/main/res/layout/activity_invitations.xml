@@ -33,7 +33,8 @@
         android:text="@string/invitations_text_button"
         android:background="#10000000"
         android:textColor="@color/nude_pink"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:onClick="save"/>
 
     <TextView
         android:layout_width="match_parent"

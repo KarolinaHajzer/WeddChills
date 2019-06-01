@@ -8,9 +8,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
@@ -20,7 +23,8 @@ public class InvitationsActivity extends AppCompatActivity {
     EditText invitation_edit_text;
     Button mInvitationSaveButton;
     TextView invitation_text_view;
-    static final int READ_BLOCK_SIZE = 100;
+    private static final String FILE_NAME = "invitation_file.txt";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +35,10 @@ public class InvitationsActivity extends AppCompatActivity {
         invitation_text_view = findViewById(R.id.labelID);
         mInvitationSaveButton = findViewById(R.id.invitation_save_button);
 
-        File f = getFileStreamPath("mytextfile.txt");
-        if(f.length()>0){
+        File f = getFileStreamPath(FILE_NAME);
+        if(f.length()==0){
             try {
-                FileOutputStream fileout=openFileOutput("mytextfile.txt", MODE_PRIVATE);
+                FileOutputStream fileout=openFileOutput(FILE_NAME, MODE_PRIVATE);
                 OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
                 outputWriter.write("0");
                 outputWriter.close();
@@ -43,50 +47,56 @@ public class InvitationsActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
+        FileInputStream fis = null;
 
         try {
-            FileInputStream fileIn=openFileInput("mytextfile.txt");
+            fis = openFileInput(FILE_NAME);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
 
-                InputStreamReader InputRead = new InputStreamReader(fileIn);
+            while ((text = br.readLine()) != null) {
+                sb.append(text).append("\n");
+            }
 
-                char[] inputBuffer = new char[READ_BLOCK_SIZE];
-                String s = "";
-                int charRead;
+            invitation_edit_text.setText(sb.toString());
 
-                while ((charRead = InputRead.read(inputBuffer)) > 0) {
-                    // char to string conversion
-                    String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                    s += readstring;
-                }
-                InputRead.close();
-                invitation_text_view.setText(s);
-                //Toast.makeText(getBaseContext(), s, Toast.LENGTH_SHORT).show();
-
-
-
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-
-
-        mInvitationSaveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
                 try {
-                    FileOutputStream fileout=openFileOutput("mytextfile.txt", MODE_APPEND);
-                    OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
-                    outputWriter.append(invitation_edit_text.getText().toString());
-                    outputWriter.close();
-
-                    //display file saved message
-                    Toast.makeText(getBaseContext(), "File saved successfully!",
-                            Toast.LENGTH_SHORT).show();
-
-                } catch (Exception e) {
+                    fis.close();
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
-        });
-    }}
+        }
+        }
+    public void save(View v) {
+        String text = invitation_edit_text.getText().toString();
+        FileOutputStream fos = null;
+
+        try {
+            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+            fos.write(text.getBytes());
+            Toast.makeText(this, "File saved!",
+                    Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    }
