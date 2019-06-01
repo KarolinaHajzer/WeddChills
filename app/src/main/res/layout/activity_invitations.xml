@@ -22,7 +22,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/invitations_text2"
-        android:inputType="text"
+        android:inputType="textMultiLine"
+        android:minLines="6"
         />
 
     <Button
@@ -37,9 +38,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello"
         android:textSize="24sp"
         android:textAlignment="center"
-        android:id="@+id/labelID" />
+        android:id="@+id/labelID"
+        android:minLines="6"/>
 
 </LinearLayout>
