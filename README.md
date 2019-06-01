@@ -1,8 +1,8 @@
 # WeddChills
 
 Wedding planner as a mobile app. Technologies:
-    • Java
-    • Android Studio
+- Java
+- Android Studio
 Application idea: For all future brides and gentlemen, who want to have all the important issues of grooming to the wedding party in one place and always with them. You do not need a briefcase with notes to always be prepared. All you need is a phone and the WedChills app.
 Content: The application will be divided into eight tabs. Each of them will be responsible for another part of the wedding preparations.
 MAIN TASKS:
