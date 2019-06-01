@@ -26,4 +26,7 @@
     <string name="main_tasks_text1">Reserve the date of the ceremony</string>
     <string name="your_date_of_ceremony_text">This is date of your ceremony:</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="guest_list_btn">Add guest</string>
+    <string name="guest_list_text_view">Here you can add guest to your guest list. Click button and add your first guest.</string>
+    <string name="guest_list_edit_text">Write name of your guest.</string>
 </resources>

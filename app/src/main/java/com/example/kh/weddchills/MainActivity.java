@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         mGuestListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Does nothing yet, but soon!
+                Intent intent = new Intent(MainActivity.this, GuestListActivity.class);
+                startActivity(intent);
             }
         });
 
