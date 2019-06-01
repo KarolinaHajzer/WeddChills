@@ -1,4 +1,5 @@
 # WeddChills
+
 Wedding planner as a mobile app. Technologies:
     • Java
     • Android Studio
