@@ -1,6 +1,7 @@
 package com.example.kh.weddchills;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -76,15 +77,15 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
@@ -120,15 +121,15 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
@@ -164,15 +165,15 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
@@ -207,15 +208,15 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
@@ -250,15 +251,15 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
@@ -293,15 +294,15 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
@@ -336,15 +337,15 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
@@ -379,15 +380,15 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
@@ -422,15 +423,15 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
@@ -465,15 +466,15 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
@@ -508,15 +509,15 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
@@ -551,19 +552,20 @@ public class Main2Activity extends AppCompatActivity {
                     mBuilder.setPositiveButton(R.string.main_taska_budget_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, BudgetActivity.class);
+                            startActivity(intent);
                         }
                     });
                     mBuilder.setNeutralButton(R.string.main_taska_calendar_btn, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            //Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(Main2Activity.this, CalendarActivity.class);
+                            startActivity(intent);
                         }
                     });
                     AlertDialog mDialog = mBuilder.create();
                     mDialog.show();}
+
             }
         });
     }

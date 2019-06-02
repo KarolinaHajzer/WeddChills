@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         mBudgetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // Does nothing yet, but soon!
+                Intent intent = new Intent(MainActivity.this, BudgetActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         mCalendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Does nothing yet, but soon!
+                Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -69,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
         mDocumentsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Does nothing yet, but soon!
+                Intent intent = new Intent(MainActivity.this, LORDactivity.class);
+                startActivity(intent);
             }
         });
 
@@ -77,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
         mCeremonyPlanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Does nothing yet, but soon!
+                Intent intent = new Intent(MainActivity.this, ActionPlanOWDactivity.class);
+                startActivity(intent);
             }
         });
 
@@ -85,8 +88,8 @@ public class MainActivity extends AppCompatActivity {
         mNotesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // Does nothing yet, but soon!
+                Intent intent = new Intent(MainActivity.this, YourNotesActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -39,12 +39,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainTasks1" />
-        <activity android:name=".GuestListActivity"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".GuestListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".BudgetActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".LORDactivity" />
+        <activity android:name=".ActionPlanOWDactivity" />
+        <activity android:name=".YourNotesActivity"></activity>
     </application>
 
 </manifest>

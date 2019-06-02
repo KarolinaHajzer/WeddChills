@@ -34,5 +34,11 @@
     <string name="main_taska_budget_btn">Go to BUDGET</string>
     <string name="main_taska_calendar_btn">Go to CALENDAR</string>
     <string name="main_taska_done_btn">Done</string>
+    <string name="budget_edit_text_str_text">Service</string>
+    <string name="budget_edit_text_str_text1">Enter your budget -></string>
+    <string name="budget_edit_text_int_text1">Here</string>
+    <string name="budget_edit_text_int_text">How much</string>
+    <string name="budget_add_btn">Add</string>
+    <string name="budget_save_btn">Save</string>
 
 </resources>
