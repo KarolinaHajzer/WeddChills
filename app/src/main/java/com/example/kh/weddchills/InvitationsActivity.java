@@ -23,8 +23,7 @@ public class InvitationsActivity extends AppCompatActivity {
     EditText invitation_edit_text;
     Button mInvitationSaveButton;
     TextView invitation_text_view;
-    private static final String FILE_NAME = "invitation_file.txt";
-
+    public static final String FILE_NAME = "invitation_file.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,13 @@ public class InvitationsActivity extends AppCompatActivity {
         invitation_edit_text = findViewById(R.id.invitation_edit_text_id);
         invitation_text_view = findViewById(R.id.labelID);
         mInvitationSaveButton = findViewById(R.id.invitation_save_button);
-
+        mInvitationSaveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String text = invitation_edit_text.getText().toString();
+                save(text,FILE_NAME);
+            }
+        });
         File f = getFileStreamPath(FILE_NAME);
         if(f.length()==0){
             try {
@@ -75,14 +80,13 @@ public class InvitationsActivity extends AppCompatActivity {
                 }
             }
         }
-        }
-    public void save(View v) {
-        String text = invitation_edit_text.getText().toString();
+    }
+    public void save(String text_to_remember,String FILE_NAME) {
         FileOutputStream fos = null;
 
         try {
             fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
-            fos.write(text.getBytes());
+            fos.write(text_to_remember.getBytes());
             Toast.makeText(this, "File saved!",
                     Toast.LENGTH_LONG).show();
         } catch (FileNotFoundException e) {

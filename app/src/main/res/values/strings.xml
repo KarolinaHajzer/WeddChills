@@ -29,4 +29,5 @@
     <string name="guest_list_btn">Add guest</string>
     <string name="guest_list_text_view">Here you can add guest to your guest list. Click button and add your first guest.</string>
     <string name="guest_list_edit_text">Write name of your guest.</string>
+    <string name="guest_list_btn_save">Save</string>
 </resources>

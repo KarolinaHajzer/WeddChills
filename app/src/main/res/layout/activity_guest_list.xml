@@ -35,19 +35,29 @@
             android:maxLines="1"
             />
 
-        <Button
-            android:id="@+id/button"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/guest_list_btn"
-            android:layout_marginTop="40dp"
-            android:onClick="addCheckbox"/>
+            android:orientation="horizontal">
 
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Anna Kot" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:onClick="addCheckbox"
+                android:text="@string/guest_list_btn" />
 
+            <Button
+                android:id="@+id/savebtn"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:onClick="save"
+                android:text="@string/guest_list_btn_save" />
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
