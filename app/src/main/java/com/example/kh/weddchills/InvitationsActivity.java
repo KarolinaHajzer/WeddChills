@@ -45,7 +45,7 @@ public class InvitationsActivity extends AppCompatActivity {
             try {
                 FileOutputStream fileout=openFileOutput(FILE_NAME, MODE_PRIVATE);
                 OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
-                outputWriter.write("0");
+                outputWriter.write("");
                 outputWriter.close();
 
             } catch (Exception e) {

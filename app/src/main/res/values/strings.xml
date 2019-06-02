@@ -30,4 +30,9 @@
     <string name="guest_list_text_view">Here you can add guest to your guest list. Click button and add your first guest.</string>
     <string name="guest_list_edit_text">Write name of your guest.</string>
     <string name="guest_list_btn_save">Save</string>
+    <string name="main_tasks_done_checkbox">Done</string>
+    <string name="main_taska_budget_btn">Go to BUDGET</string>
+    <string name="main_taska_calendar_btn">Go to CALENDAR</string>
+    <string name="main_taska_done_btn">Done</string>
+
 </resources>
