@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class BudgetActivity extends AppCompatActivity {
 
@@ -21,8 +22,11 @@ public class BudgetActivity extends AppCompatActivity {
     int remainingbudget;
     int RemBudget;
     public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String TEXT0 = "text0";
-    private String text;
+    public static final String WHOLE_BUDGET = "whole_budget";
+    public static final String TEXTVIEW_STR = "textView_str";
+    public static final String TEXTVIEW_INT = "textView_int";
+    public static final String REMAIN_BUDGET = "remain_budget";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +43,13 @@ public class BudgetActivity extends AppCompatActivity {
         textViewRemBudget = findViewById(R.id.budget_left_textView);
         textViewRemBudgetInt = findViewById(R.id.budget_left_textViewINT);
 
+        loadUpdateData();
+
+        if(mWholeBudget.getText().toString().isEmpty()){mWholeBudget.setClickable(false);}
+
         mWholeBudget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-                text = sharedPreferences.getString(TEXT0, "");
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(BudgetActivity.this);
                 mBuilder.setTitle("Enter your budget");
                 mBuilder.setCancelable(false);
@@ -58,14 +64,10 @@ public class BudgetActivity extends AppCompatActivity {
                 mBuilder.setPositiveButton(R.string.ok_btn, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
-                        /*
-                        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString(TEXT0, input.getText().toString());
-                        editor.apply();
-                        */
                         mWholeBudget.setText(input.getText());
                         mWholeBudget.setClickable(false);
+                        textViewRemBudgetInt.setText("");
+                        textViewRemBudgetInt.append(input.getText().toString());
                     }
                 });
 
@@ -85,22 +87,17 @@ public class BudgetActivity extends AppCompatActivity {
                     oneServiceBudget = Integer.valueOf(mEditTextInt.getText().toString());
                     textViewInt.append("\n");
                     remainingbudget = WholeBudgetInt - oneServiceBudget;
-                    //textViewRemBudget.append(Integer.toString(remainingbudget));
                     textViewRemBudgetInt.setText("");
                     textViewRemBudgetInt.append(Integer.toString(remainingbudget));
-
                 }else{
-                    //apending textView with values from EditText
                     textViewStr.append(mEditTextStr.getText());
                     textViewStr.append("\n");
                     textViewInt.append(mEditTextInt.getText());
                     textViewInt.append("\n");
 
-                    oneServiceBudget = Integer.valueOf(mEditTextInt.getText().toString()); //integer from editText
-                    RemBudget = Integer.valueOf(textViewRemBudgetInt.getText().toString());// integer from textView remaining budget
-                    //RemBudget = Integer.parseInt(textViewRemBudget.getText().toString());
-                    //RemBudget = Integer.valueOf(textViewRemBudget.getText().toString());
-                    remainingbudget = RemBudget - oneServiceBudget; // remaining budget is budeget from RemBudg textView minus service budget from editText
+                    oneServiceBudget = Integer.valueOf(mEditTextInt.getText().toString());
+                    RemBudget = Integer.valueOf(textViewRemBudgetInt.getText().toString());
+                    remainingbudget = RemBudget - oneServiceBudget;
                     textViewRemBudgetInt.setText("");
                     textViewRemBudgetInt.append(Integer.toString(remainingbudget));
                 }
@@ -114,11 +111,29 @@ public class BudgetActivity extends AppCompatActivity {
         mSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //
+                SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                editor.putString(WHOLE_BUDGET, mWholeBudget.getText().toString());
+                editor.putString(TEXTVIEW_STR, textViewStr.getText().toString());
+                editor.putString(TEXTVIEW_INT, textViewInt.getText().toString());
+                editor.putString(REMAIN_BUDGET, textViewRemBudgetInt.getText().toString());
+
+                editor.apply();
+                makeToast();
             }
         });
+    }
 
+    public void makeToast(){
+        Toast.makeText(this, "Saved", Toast.LENGTH_LONG).show();
+    }
 
-
+    public void loadUpdateData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        mWholeBudget.setText(sharedPreferences.getString(WHOLE_BUDGET, ""));
+        textViewStr.setText(sharedPreferences.getString(TEXTVIEW_STR, ""));
+        textViewInt.setText(sharedPreferences.getString(TEXTVIEW_INT, ""));
+        textViewRemBudgetInt.setText(sharedPreferences.getString(REMAIN_BUDGET, ""));
     }
 }
