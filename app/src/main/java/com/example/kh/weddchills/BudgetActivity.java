@@ -52,13 +52,14 @@ public class BudgetActivity extends AppCompatActivity {
                     textViewStr.append("\n");
                     textViewInt.append(mEditTextInt.getText());
                     textViewInt.append("\n");
+
                     oneServiceBudget = Integer.valueOf(mEditTextInt.getText().toString()); //integer from editText
                     RemBudget = Integer.valueOf(textViewRemBudgetInt.getText().toString());// integer from textView remaining budget
                     //RemBudget = Integer.parseInt(textViewRemBudget.getText().toString());
                     //RemBudget = Integer.valueOf(textViewRemBudget.getText().toString());
                     remainingbudget = RemBudget - oneServiceBudget; // remaining budget is budeget from RemBudg textView minus service budget from editText
-
-                    textViewRemBudgetInt.setText(remainingbudget);
+                    textViewRemBudgetInt.setText("");
+                    textViewRemBudgetInt.append(Integer.toString(remainingbudget));
                     }
 
                 mEditTextStr.getText().clear();

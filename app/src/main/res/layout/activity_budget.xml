@@ -129,18 +129,16 @@
 
         <TextView
             android:id="@+id/budget_left_textView"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
             android:text="@string/remaining_budget_textView"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/budget_left_textViewINT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="0000"
             />
 
 
