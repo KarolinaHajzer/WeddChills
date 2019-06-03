@@ -1,20 +1,28 @@
 package com.example.kh.weddchills;
 
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class BudgetActivity extends AppCompatActivity {
 
-    EditText mEditTextStr, mEditTextInt, mWholeBudget;
+    EditText mEditTextStr, mEditTextInt;
     Button mAddBtn, mSaveBtn;
-    TextView textViewStr, textViewInt, textViewRemBudget, textViewRemBudgetInt;
+    TextView textViewStr, textViewInt, textViewRemBudget, textViewRemBudgetInt, mWholeBudget;
     int oneServiceBudget;
     int remainingbudget;
     int RemBudget;
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String TEXT0 = "text0";
+    private String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +39,41 @@ public class BudgetActivity extends AppCompatActivity {
         textViewRemBudget = findViewById(R.id.budget_left_textView);
         textViewRemBudgetInt = findViewById(R.id.budget_left_textViewINT);
 
+        mWholeBudget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                text = sharedPreferences.getString(TEXT0, "");
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(BudgetActivity.this);
+                mBuilder.setTitle("Enter your budget");
+                mBuilder.setCancelable(false);
+                final EditText input = new EditText(BudgetActivity.this);
+                input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.MATCH_PARENT);
+                input.setLayoutParams(lp);
+                mBuilder.setView(input);
+
+                mBuilder.setPositiveButton(R.string.ok_btn, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        /*
+                        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString(TEXT0, input.getText().toString());
+                        editor.apply();
+                        */
+                        mWholeBudget.setText(input.getText());
+                        mWholeBudget.setClickable(false);
+                    }
+                });
+
+                AlertDialog mDialog = mBuilder.create();
+                mDialog.show();
+            }
+        });
+
         mAddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +89,7 @@ public class BudgetActivity extends AppCompatActivity {
                     textViewRemBudgetInt.setText("");
                     textViewRemBudgetInt.append(Integer.toString(remainingbudget));
 
-                    }else{
+                }else{
                     //apending textView with values from EditText
                     textViewStr.append(mEditTextStr.getText());
                     textViewStr.append("\n");
@@ -60,7 +103,7 @@ public class BudgetActivity extends AppCompatActivity {
                     remainingbudget = RemBudget - oneServiceBudget; // remaining budget is budeget from RemBudg textView minus service budget from editText
                     textViewRemBudgetInt.setText("");
                     textViewRemBudgetInt.append(Integer.toString(remainingbudget));
-                    }
+                }
 
                 mEditTextStr.getText().clear();
                 mEditTextInt.getText().clear();

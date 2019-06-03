@@ -35,11 +35,13 @@
     <string name="main_taska_calendar_btn">Go to CALENDAR</string>
     <string name="main_taska_done_btn">Done</string>
     <string name="budget_edit_text_str_text">Service</string>
-    <string name="budget_edit_text_str_text1">Enter your budget -></string>
+    <string name="budget_edit_text_str_text1">Click here to add your budget</string>
     <string name="budget_edit_text_int_text1">Here</string>
     <string name="budget_edit_text_int_text">How much</string>
     <string name="budget_add_btn">Add</string>
     <string name="budget_save_btn">Save</string>
+    <string name="ok_btn">OK</string>
+    <string name="your_budget">Your budget:</string>
     <string name="whole_budget_for_wedding_editText_hint">Enter your budget for wedding</string>
     <string name="remaining_budget_textView">Remaining budget: </string>
     <string name="budget_textView1">In this section you\'re adding budget for your wedding and all expenses.</string>
