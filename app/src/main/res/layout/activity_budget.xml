@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:fillViewport="false">
+    android:fillViewport="false"
+    android:background="@drawable/background2">
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -32,6 +33,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:textColor="@color/colorAccent"
             android:text="@string/your_budget"
             android:layout_marginTop="40dp"
             android:maxLines="1"
@@ -43,6 +45,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/whole_budget_for_wedding_editText_hint"
             android:textAlignment="center"
+            android:textColor="@color/colorAccent"
             android:layout_marginTop="40dp"
             android:clickable="true"
             android:focusable="true"
@@ -54,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:textColor="@color/colorAccent"
             android:layout_marginTop="40dp"
             android:text="@string/budget_textView2"
             android:maxLines="2"/>
@@ -68,8 +72,10 @@
             android:id="@+id/budget_edit_text_str"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:hint="@string/budget_edit_text_str_text"
             android:inputType="text"
+            android:textSize="15sp"
             android:textAlignment="center"
             android:maxLines="1"
             />
@@ -78,8 +84,10 @@
             android:id="@+id/budget_edit_text_int"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:hint="@string/budget_edit_text_int_text"
             android:textAlignment="center"
+            android:textSize="15sp"
             android:inputType="number"
             android:maxLines="1"/>
 
@@ -97,7 +105,9 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:onClick="addbudget"
-            android:text="@string/budget_add_btn" />
+            android:text="@string/budget_add_btn"
+            android:background="#10000000"
+            android:textColor="@color/colorAccent"/>
 
         <Button
             android:id="@+id/saveBtn"
@@ -106,7 +116,9 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:onClick="save"
-            android:text="@string/budget_save_btn" />
+            android:text="@string/budget_save_btn"
+            android:background="#10000000"
+            android:textColor="@color/colorAccent"/>
 
     </LinearLayout>
 
@@ -142,6 +154,7 @@
             android:id="@+id/budget_left_textView"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
             android:text="@string/remaining_budget_textView"
             android:textAlignment="center" />
 
@@ -149,6 +162,7 @@
             android:id="@+id/budget_left_textViewINT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
             android:textAlignment="center"
             />
 

@@ -3,7 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:fillViewport="false"
+    android:background="@drawable/background2">
     <TextView
         android:id="@+id/loginscrn"
         android:layout_width="wrap_content"
@@ -11,7 +13,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:text="@string/invitations_text1"
+        android:text="@string/LORD_text_view"
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_gravity="center"
@@ -32,7 +34,7 @@
         android:layout_height="wrap_content"
         android:text="@string/invitations_text_button"
         android:background="#10000000"
-        android:textColor="@color/nude_pink"
+        android:textColor="@color/purple"
         android:layout_marginTop="20dp"
         android:onClick="save"/>
 

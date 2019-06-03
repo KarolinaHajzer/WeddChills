@@ -42,10 +42,13 @@
     <string name="budget_save_btn">Save</string>
     <string name="ok_btn">OK</string>
     <string name="your_budget">Your budget:</string>
-    <string name="whole_budget_for_wedding_editText_hint">Enter your budget for wedding</string>
+    <string name="whole_budget_for_wedding_editText_hint">Enter here</string>
     <string name="remaining_budget_textView">Remaining budget: </string>
     <string name="budget_textView1">In this section you\'re adding budget for your wedding and all expenses.</string>
     <string name="budget_textView2">-------------------- \n Right below you can add your expenses. </string>
+    <string name="action_plan_text_view">This is your plan for your wedding day.</string>
+    <string name="LORD_text_view">This is your list of requaired documents.</string>
+    <string name="notes_text_view">Your notes.</string>
 
 
 </resources>
