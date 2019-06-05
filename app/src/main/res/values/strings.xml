@@ -49,6 +49,7 @@
     <string name="action_plan_text_view">This is your plan for your wedding day.</string>
     <string name="LORD_text_view">This is your list of requaired documents.</string>
     <string name="notes_text_view">Your notes.</string>
+    <string name="number_of_checked_guests">Number of checked guests:</string>
 
 
 </resources>

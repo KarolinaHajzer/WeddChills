@@ -66,8 +66,6 @@ public class GuestListActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         for (int i = 0; i < ll.getChildCount(); i++) {
-
-
             v = ll.getChildAt(i);
             String dwukropek = ":";
             String text = ((CheckBox) v).getText().toString();
