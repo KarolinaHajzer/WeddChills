@@ -15,8 +15,8 @@
     <string name="invitation_text">Write down most important data you would like to have in your invitation.</string>
     <string name="guests_text">Your guest list. Select checkboxes if guests confirm there arrival, after that you will have complete guest list that will show at your weeding.</string>
     <string name="budget_text">What is your budget for this wedding? Add the expenses that await you. All important payment terms will be added into your Calendar.</string>
-    <string name="calendar_text">Connect to your Google calendar. It will contain important dates of tasks like confirmations or payment terms.</string>
-    <string name="documents_text">Checkboxes for important documents that you have to have on your big day.</string>
+    <string name="calendar_text">It will contain important dates of tasks like confirmations or payment terms.</string>
+    <string name="documents_text">Place for you to write down what important documents will you need on your big day.</string>
     <string name="ceremony_plan_text">Text field to summarize the order of activities on the day of the wedding.</string>
     <string name="notes_text">Text field for your notes.</string>
     <string name="main_tasks_text_two">This are your main tasks for your wedding. Fill them up and be ready for your big day.</string>

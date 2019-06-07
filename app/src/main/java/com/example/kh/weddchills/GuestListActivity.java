@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -19,6 +21,7 @@ public class GuestListActivity extends AppCompatActivity {
     Button mAddGuest;
     Button mSaveBtn;
     EditText mEnterGuestName;
+    TextView mNumber_of_checked_guests_int;
     LinearLayout ll;
     int Id_number = 0;
     List<String> mList =  new ArrayList<>();
@@ -26,6 +29,8 @@ public class GuestListActivity extends AppCompatActivity {
     String guest_name;
     CheckBox checkbox ;
     public String SHARED_PREFS = "sharedPrefs";
+    int checked_guests = 0;
+    int checked_guests1 = 0;
 
 
     @Override
@@ -35,6 +40,7 @@ public class GuestListActivity extends AppCompatActivity {
 
         mAddGuest = findViewById(R.id.button);
         mSaveBtn = findViewById(R.id.savebtn);
+        mNumber_of_checked_guests_int = findViewById(R.id.number_of_checked_guests_int);
         mEnterGuestName = findViewById(R.id.guest_list_edit_text_id);
         ll = findViewById(R.id.layoutID);
 
@@ -71,21 +77,24 @@ public class GuestListActivity extends AppCompatActivity {
             String text = ((CheckBox) v).getText().toString();
             if(((CheckBox) v).isChecked()){
                 mIsChecked = "1";
+                checked_guests1++;
             }else{
                 mIsChecked = "0";
             }
             String whole_tetx = text + dwukropek + mIsChecked;
             mList.add(whole_tetx);
         }
+            mNumber_of_checked_guests_int.setText("Number of checked guests: " + Integer.toString(checked_guests1));
             Set<String> set = new HashSet<>();
             set.addAll(mList);
-            editor.putStringSet("key", set);
+            editor.putStringSet("keys", set);
             editor.apply();
+            makeToast();
 
     }
     public void loadUpdateData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        Set<String> set = sharedPreferences.getStringSet("key", null);
+        Set<String> set = sharedPreferences.getStringSet("keys", null);
 
         if(set == null){mEnterGuestName.setText("");}
         else {
@@ -98,10 +107,17 @@ public class GuestListActivity extends AppCompatActivity {
 
                 Integer isChecked_int = Integer.valueOf(isChecked_string);
                 CheckBox returned_checkbox = createNewCheckBox(guest_name_from_SP);
-                if(isChecked_int == 1){returned_checkbox.setChecked(true);}
+                if(isChecked_int == 1){
+                    returned_checkbox.setChecked(true);
+                    checked_guests++;
+                }
                 else{returned_checkbox.setChecked(false);}
                 ll.addView(returned_checkbox);
             }
         }
+       mNumber_of_checked_guests_int.setText("Number of checked guests: " + Integer.toString(checked_guests));
 }
+    public void makeToast(){
+        Toast.makeText(this, "Saved", Toast.LENGTH_LONG).show();
+    }
 }
